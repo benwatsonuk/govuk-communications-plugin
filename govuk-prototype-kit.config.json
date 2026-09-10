@@ -1,0 +1,17 @@
+{
+	"meta": {
+		"description": "This plugin provides the ability to integrate mock ups of communication patterns such as email or SMS notifications."
+	},
+	"nunjucksPaths": ["/dist/views"],
+  "assets": [
+    "/dist/assets"
+  ],
+  "scripts": [{
+    "path": "/dist/assets/javascripts/all.js",
+    "type": "module"
+  }
+  ],
+  "sass": [
+    "/dist/assets/scss/all.scss"
+  ]
+}
