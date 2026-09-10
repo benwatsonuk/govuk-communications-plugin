@@ -1,4 +1,4 @@
-# GOV.UK Communication Simulations (govuk-comms-plugin)
+# GOV.UK Communication Simulations (govuk-communications-plugin)
 
 A plugin to integrate simulations of communication patterns such as email or SMS notifications into GOV.UK prototypes. 
 
