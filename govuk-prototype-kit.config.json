@@ -13,5 +13,8 @@
   ],
   "sass": [
     "/dist/assets/scss/all.scss"
+  ],
+  "stylesheets": [
+    "/dist/assets/stylesheets/tailwind.css"
   ]
 }

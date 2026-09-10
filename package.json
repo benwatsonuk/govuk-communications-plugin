@@ -16,13 +16,16 @@
   "scripts": {
     "test": "mocha --require ts-node/register",
     "clean": "rimraf dist",
-    "build": "npm run clean && tsc && cpx \"src/{assets,views}/**/*\" dist"
+    "dev": "tailwindcss -i ./src/assets/stylesheets/tailwind.css -o ./dist/assets/stylesheets/tailwind.css --watch",
+    "build:tailwind": "tailwindcss -i ./src/assets/stylesheets/tailwind.css -o ./dist/assets/stylesheets/tailwind.css --minify",
+    "build": "npm run clean && tsc && npm run build:tailwind && cpx \"src/{assets,views}/**/*\" dist"
   },
   "dependencies": {
     "express": "^4.18.2",
     "nunjucks": "^3.2.4"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
     "@types/express": "^5.0.6",
     "@types/mocha": "^10.0.10",
     "@types/node": "^25.0.8",
@@ -31,6 +34,7 @@
     "mocha": "^11.7.5",
     "nyc": "^14.1.1",
     "rimraf": "^6.1.2",
+    "tailwindcss": "^4.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
