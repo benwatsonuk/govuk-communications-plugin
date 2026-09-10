@@ -1,17 +1,17 @@
 {
-  "name": "@benwatsonuk/govuk-comms-plugin",
+  "name": "@benwatsonuk/govuk-communications-plugin",
   "author": "BenWatsonUK",
   "description": "A plugin to integrate simulations of communication patterns such as email or SMS notifications into GOV.UK prototypes. Including the ability to simulate communications and convey the passing of time between interactions.",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "homepage": "https://github.com/benwatsonuk/govuk-comms-plugin",
+  "homepage": "https://github.com/benwatsonuk/govuk-communications-plugin",
   "bugs": {
-    "url": "https://github.com/benwatsonuk/govuk-comms-plugin/issues"
+    "url": "https://github.com/benwatsonuk/govuk-communications-plugin/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benwatsonuk/govuk-comms-plugin.git"
+    "url": "git+https://github.com/benwatsonuk/govuk-communications-plugin.git"
   },
   "scripts": {
     "test": "mocha --require ts-node/register",
