@@ -1,4 +1,4 @@
-.govuk-comms-plugin--email-alert {
+.govuk-comms-plugin__notification--email {
   width: $emailAlertWidth;
   background: #eaeaea;
   border: 2px solid black;
@@ -6,9 +6,9 @@
   transition: all 1.5s;
   animation: shake 5s cubic-bezier(.36, .07, .19, .97) both infinite;
   transform: translate3d(0, 0, 0);
-  padding: 1rem;
-  position: fixed;
-  bottom: -100%;
+  padding: 0.25rem;
+  // position: fixed;
+  // bottom: -100%;
 
   &--windows-10 {
     background: rgb(0, 90, 158);

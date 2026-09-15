@@ -1,9 +1,9 @@
 {% macro govukCommsPluginEmailAlert(params) %}
 
-<a data-govuk-comms-plugin-notification-type="{% if params.type %}params.type{% else %}email{% endif %}" 
+<a data-govuk-comms-plugin-notification-type="{% if params.type %}{{params.type}}{% else %}email{% endif %}" 
     {% if params.delay %}data-govuk-comms-plugin-notification-delay="{{ params.delay }}"{% endif %} 
     data-govuk-comms-plugin-notification-timeout="{{ params.timeout }}" 
-    class="govuk-comms-plugin__notification"
+    class="govuk-comms-plugin__notification {% if params.type %}govuk-comms-plugin__notification--{{ params.type }}{% endif %}"
     href="{{ params.href }}">
     <h2>{{params.heading or "Email alert!"}}</h2>
     <p>{{params.message or "This is an alert"}}</p>
