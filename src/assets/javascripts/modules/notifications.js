@@ -16,5 +16,20 @@ export const notifyUserOfMessage = (type, heading, message, from, target) => {
       theNotification.classList.remove('active')
     }
   })
+}
 
+const checkForNotifications = () => {
+    console.log('Looking for notifications...')
+    const theNotification = document.querySelector('.govuk-comms-plugin__notification')
+    const theTimeOut = theNotification?.dataset?.govukCommsPluginNotificationTimeout || 3000
+    if (theNotification) {
+        setTimeout(() => {
+            theNotification.classList.add('govuk-comms-plugin__notification--show')
+        }, theTimeOut)
+    }
+}
+
+export const initNotifications = () => {
+  console.log('initNotifications')
+  checkForNotifications()
 }

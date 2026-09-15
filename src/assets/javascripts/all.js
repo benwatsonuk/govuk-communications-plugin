@@ -1,6 +1,8 @@
 import { consoleLog } from "./modules/console.js"
+import { initNotifications } from "./modules/notifications.js"
 
 consoleLog('Hey');
+initNotifications();
 
 // const theTrigger = document.getElementById('triggerDaysPassing')
 // const theCounter = document.getElementById('daysPassing')

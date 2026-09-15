@@ -20,8 +20,14 @@
   "templates": [
     {
       "path": "/dist/views/templates/email.html",
-      "name": "GOVUK Email Layout",
+      "name": "GOV.UK Email Layout",
       "type": "nunjucks"
+    }
+  ],
+  "nunjucksMacros": [
+    {
+      "macroName": "govukCommsPluginEmailAlert",
+      "importFrom": "macros/email-alert.njk"
     }
   ]
 }
