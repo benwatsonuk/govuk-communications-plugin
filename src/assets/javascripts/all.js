@@ -1,62 +1,41 @@
-console.log('Loaded Comms')
+import { consoleLog } from "./modules/console.js"
 
-function alertTheUser(message) {
-  alert(message)
-}
+consoleLog('Hey');
 
-const theTrigger = document.getElementById('triggerDaysPassing')
-const theCounter = document.getElementById('daysPassing')
+// const theTrigger = document.getElementById('triggerDaysPassing')
+// const theCounter = document.getElementById('daysPassing')
 
-const notifyUserOfMessage = (type, heading, message, from, target) => {
-  console.log('notifyUserOfMessage')
-  type = type || 'email'
-  // Insert relevant html into page (SMS or Email)
-  addHtmlToPage(type, heading, message, from)
-  // Reveal notification
-  const theNotification = document.querySelector('.govuk-comms-plugin--' + type + '-alert')
-  setTimeout(() => {
-    theNotification.classList.add('govuk-comms-plugin--translate-from-bottom')
-  }, 1000)
-  // Handle click
-  theNotification.addEventListener('click', (e) => {
-    if (target) {
-      window.location.href = target
-    } else {
-      theNotification.classList.remove('active')
-    }
-  })
 
-}
 
-const addHtmlToPage = (type, heading, message, from) => {
-  console.log('addHtmlToPage')
-  document.getElementById('main-content').innerHTML += setTheHtml(type, heading, message, from)
-}
+// const addHtmlToPage = (type, heading, message, from) => {
+//   console.log('addHtmlToPage')
+//   document.getElementById('main-content').innerHTML += setTheHtml(type, heading, message, from)
+// }
 
-const truncateString = (str, n) => {
-  if (str.length > n) {
-    return str.substring(0, n) + "...";
-  } else {
-    return str;
-  }
-}
+// const truncateString = (str, n) => {
+//   if (str.length > n) {
+//     return str.substring(0, n) + "...";
+//   } else {
+//     return str;
+//   }
+// }
 
-const setTheHtml = (type, heading, message, from) => {
-  if (type === 'email') {
-    message = truncateString(message, 75)
-    return `<div class="govuk-comms-plugin--email-alert govuk-comms-plugin--email-alert--windows-10">
-    <h2>${from}</h2>
-    <h3>${heading}</h3>
-    <p>${message}</p>
-    </div>`
-  } else {
-    return `<div id="phoneBackground" class="govuk-comms-plugin--phone-alert active">
-        <div id="phone-mockup" class="active">
+// const setTheHtml = (type, heading, message, from) => {
+//   if (type === 'email') {
+//     message = truncateString(message, 75)
+//     return `<div class="govuk-comms-plugin--email-alert govuk-comms-plugin--email-alert--windows-10">
+//     <h2>${from}</h2>
+//     <h3>${heading}</h3>
+//     <p>${message}</p>
+//     </div>`
+//   } else {
+//     return `<div id="phoneBackground" class="govuk-comms-plugin--phone-alert active">
+//         <div id="phone-mockup" class="active">
 
-        </div>
-    </div>`
-  }
-}
+//         </div>
+//     </div>`
+//   }
+// }
 
 // The following could do with a rewrite
 

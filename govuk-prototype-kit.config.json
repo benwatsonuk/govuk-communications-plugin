@@ -16,5 +16,12 @@
   ],
   "stylesheets": [
     "/dist/assets/stylesheets/tailwind.css"
+  ],
+  "templates": [
+    {
+      "path": "/dist/views/templates/email.html",
+      "name": "GOVUK Email Layout",
+      "type": "nunjucks"
+    }
   ]
 }

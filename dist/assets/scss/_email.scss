@@ -55,12 +55,12 @@
   }
 }
 
-.layout--email {
+.govukCommsPlugin__layout--email {
     font-size: 0.7em;;
     .govuk-width-container {
         max-width: 580px; // Same width as is set in Notify emails
     }
-    .email--header {
+    .govukCommsPlugin__email--header {
         @include govuk-responsive-margin(2, "all");
         font-size: 0.8rem;
         div {

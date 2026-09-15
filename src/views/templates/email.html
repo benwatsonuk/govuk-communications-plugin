@@ -1,14 +1,10 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
-
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-{% from "../components/email-header.njk" import "emailHeader" with context %}
+
+{% from "../macros/email-header.njk" import "govukCommsPluginEmailHeader" with context %}
 {% set bodyClasses = "layout--email" %}
 
 {% block header %}
-	{{emailHeader()}}
+	{{ govukCommsPluginEmailHeader() }}
 	{{ govukHeader() }}
 {% endblock %}
 

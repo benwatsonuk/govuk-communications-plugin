@@ -1,4 +1,4 @@
-{% macro daysPassing(params) %}
+{% macro govukCommsPluginDaysPassing(params) %}
     <div id="daysPassing" data-daysPassUrl="{{ params.url }}"
          {%- if (params.timeToPrompt) %}data-daysPassTimeToPrompt="{{ params.timeToPrompt }}"{% endif %}
             {%- if (params.days) %}data-daysPassDays="{{ params.days }}"{% endif %} >

@@ -1,4 +1,4 @@
-#phone-mockup {
+.govukCommsPlugin__phone-mockup {
   width: $phoneWidth;
   background: url($govuk-comms-assets + 'images/phone-alert.png') no-repeat;
   background-size: cover;
@@ -12,7 +12,7 @@
   }
 }
 
-#phoneBackground {
+.govukCommsPlugin__phone-background {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -30,7 +30,7 @@
     opacity: 1;
   }
 
-  #phone-mockup {
+  .govukCommsPlugin__phone-mockup {
     top: -100%;
     margin-top: - ($phoneHeight / 2);
     right: 50%;
@@ -43,8 +43,8 @@
   }
 }
 
-#phoneAccessCode {
-  #phone-mockup {
+.govukCommsPlugin__phone-access-code {
+  .govukCommsPlugin__phone-mockup {
     background: url($govuk-comms-assets + '/images/phone-alert-access-code.png') no-repeat;
     background-size: cover;
     right: -50%;
