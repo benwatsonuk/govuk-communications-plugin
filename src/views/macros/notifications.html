@@ -1,0 +1,41 @@
+{% macro govukCommsPluginNotification(params) %}
+{% from "./email-alert.html" import govukCommsPluginNotificationEmail %}
+
+<div data-module="govuk-comms-plugin-notification" 
+    data-govuk-comms-plugin-notification-type="{{ params.type or 'email' }}" 
+    data-govuk-comms-plugin-notification-style="{{ params.style or 'default' }}" 
+    {% if params.delay %}data-govuk-comms-plugin-notification-delay="{{ params.delay }}"{% endif %} 
+    data-govuk-comms-plugin-notification-delay="{{ params.delay }}" 
+    class="govuk-comms-plugin__notification {% if params.type %}govuk-comms-plugin__notification__{{ params.type }}{% endif %} govuk-comms-plugin__notification--{{ params.style or 'default'}}"
+    href="{{ params.href }}">
+    {% if params.type === "email" %}
+        {{ govukCommsPluginNotificationEmail(params) }}
+    {% endif %}
+    <!-- <div class="govuk-comms-plugin__notification__header">
+        <h2>{{params.heading or "Email alert!"}}</h2>
+    </div>
+    <p>{{params.message or "This is an alert"}}</p> -->
+</div>
+
+{% endmacro %}
+
+<!-- Single Light Mode Notification -->
+  <div class="relative mx-2">
+    <!-- Main Notification Content with Subtle Layer Effect -->
+    <div class="p-4 bg-white/50 rounded-3xl backdrop-blur-lg shadow-md flex items-start space-x-3">
+      <!-- App Icon -->
+      <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
+        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A1.5 1.5 0 016 16.5V7.5a1.5 1.5 0 00-1.5-1.5h-.75A1.5 1.5 0 003 7.5v9a1.5 1.5 0 001.5 1.5h.621zm0 0L8.622 21l-1.5-1.5L12 13.5m0 0L15 17.5l1.378-1.5M12 13.5v-3"></path>
+        </svg>
+      </div>
+      <!-- Notification Content -->
+      <div class="flex-1">
+        <div class="flex justify-between items-center">
+          <h2 class="text-sm font-semibold text-black">App Name</h2>
+          <span class="text-xs text-black/40">Now</span>
+        </div>
+        <p class="text-gray-600 text-sm">This is a notification message that looks similar to iPhone style.</p>
+      </div>
+    </div>
+  </div>

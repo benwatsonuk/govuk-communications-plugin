@@ -26,8 +26,8 @@
   ],
   "nunjucksMacros": [
     {
-      "macroName": "govukCommsPluginEmailAlert",
-      "importFrom": "macros/email-alert.njk"
+      "macroName": "govukCommsPluginNotification",
+      "importFrom": "macros/notifications.njk"
     }
   ]
 }

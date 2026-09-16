@@ -1,12 +1,21 @@
-{% macro govukCommsPluginEmailAlert(params) %}
+{% macro govukCommsPluginNotificationEmail(params) %}
 
-<a data-govuk-comms-plugin-notification-type="{% if params.type %}{{params.type}}{% else %}email{% endif %}" 
-    {% if params.delay %}data-govuk-comms-plugin-notification-delay="{{ params.delay }}"{% endif %} 
-    data-govuk-comms-plugin-notification-timeout="{{ params.timeout }}" 
-    class="govuk-comms-plugin__notification {% if params.type %}govuk-comms-plugin__notification--{{ params.type }}{% endif %}"
-    href="{{ params.href }}">
-    <h2>{{params.heading or "Email alert!"}}</h2>
-    <p>{{params.message or "This is an alert"}}</p>
-</a>
+    <div class="govuk-comms-plugin__notification__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8c0-3.31-2.69-6-6-6S6 4.69 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+    </div>
 
+    <!-- <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
+      <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A1.5 1.5 0 016 16.5V7.5a1.5 1.5 0 00-1.5-1.5h-.75A1.5 1.5 0 003 7.5v9a1.5 1.5 0 001.5 1.5h.621zm0 0L8.622 21l-1.5-1.5L12 13.5m0 0L15 17.5l1.378-1.5M12 13.5v-3"></path>
+      </svg>
+    </div> -->
+
+    <div class="flex-1">
+      <div class="flex justify-between items-center">
+          <h2 class="text-sm font-semibold text-black">{{params.heading or "Email alert!"}}</h2>
+          <span class="text-xs text-black/40">Now</span>
+      </div>
+      <p class="text-gray-600 text-sm">{{params.message or "This is an alert"}}</p>
+    </div>
+    
 {% endmacro %}

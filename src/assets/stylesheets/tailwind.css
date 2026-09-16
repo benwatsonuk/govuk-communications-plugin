@@ -4,3 +4,29 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @source "../../views";
+
+/* Adding @apply styles here to keep the HTML clean and separate from style as much as possible. Did not want to mix SASS and POST-CSS, so this seems like the best approach */
+.govuk-comms-plugin__notification__email--default {
+    @apply p-4 bg-white/50 rounded-3xl backdrop-blur-lg shadow-md flex items-start space-x-3;
+}
+
+.govuk-comms-plugin__notification__email--alt {
+    @apply shadow-lg rounded-lg bg-white mx-auto m-8 p-4 flex;
+}
+
+.govuk-comms-plugin__notification__email--apple {
+    @apply p-4 bg-white/50 rounded-3xl backdrop-blur-lg shadow-md flex items-start space-x-3;
+}
+
+.govuk-comms-plugin__notification__email--apple--dark {
+    @apply p-4 bg-gray-800/50 rounded-3xl backdrop-blur-lg shadow-md flex items-start space-x-3;
+}
+
+/* .govuk-comms-plugin__notification__email--windows {
+    @apply ;
+}
+
+.govuk-comms-plugin__notification__email--gmail {
+    @apply ;
+} */
+
