@@ -1,8 +1,8 @@
 .govukCommsPlugin__phone-mockup {
-  width: $phoneWidth;
+  width: $govukCommsPluginPhoneWidth;
   background: url($govuk-comms-assets + 'images/phone-alert.png') no-repeat;
   background-size: cover;
-  height: $phoneHeight;
+  height: $govukCommsPluginPhoneHeight;
   transition: all 1.5s;
   animation: shake 5s cubic-bezier(.36, .07, .19, .97) both infinite;
   transform: translate3d(0, 0, 0);
@@ -32,9 +32,9 @@
 
   .govukCommsPlugin__phone-mockup {
     top: -100%;
-    margin-top: - ($phoneHeight / 2);
+    margin-top: - ($govukCommsPluginPhoneHeight / 2);
     right: 50%;
-    margin-right: -($phoneWidth / 2);
+    margin-right: -($govukCommsPluginPhoneWidth / 2);
     position: absolute;
 
     &.active {
@@ -49,7 +49,7 @@
     background-size: cover;
     right: -50%;
     top: 50%;
-    margin-top: - ($phoneHeight / 2);
+    margin-top: - ($govukCommsPluginPhoneHeight / 2);
     position: absolute;
 
     &.active {

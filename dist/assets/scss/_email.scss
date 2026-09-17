@@ -1,20 +1,71 @@
 
 .govuk-comms-plugin__notification__email {
-  width: $emailAlertWidth;
-  min-height: $emailAlertHeight;
+  width: 90%;
+  margin: 0 auto;
   transition: all 1.5s;
+  @include govuk-media-query($from: desktop) {
+    width: $govukCommsPluginEmailAlertWidth;
+    min-height: $govukCommsPluginEmailAlertHeight;
+  }
+  
   &.govuk-comms-plugin__notification {
    
     &--default {
       // background: var(--govuk-body-background-colour, #fff);
-      background: var(--govuk-surface-border-colour);
-      border: 1px solid var(--govuk-border-color);
-      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+      background: var(--govuk-surface-background-colour);
+      border: 1px solid var(--govuk-surface-border-colour);
+      box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
 
-      p {
-        color: var(--govuk-body-color, #505a5f);
-        font-size: 14px;
-        margin-bottom: 0;
+      .govuk-comms-plugin__notification {
+        &__container {
+          display: flex;
+          padding: 0.5rem;
+        }
+
+        &__header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        &__content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-left: 0.5rem;
+        }
+
+        &__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 2em;
+          width: 2em;
+          padding: 0.5rem;
+          flex-shrink: 0;
+          border-radius: 50%;
+          background: var(--govuk-body-background-colour);
+
+          svg {
+            width: 80%;
+            path {
+              fill: var(--govuk-surface-border-colour);
+            }
+          }
+        }
+
+        &__body, &__body p {
+          color: --var(--govuk-body-color);
+          font-size: 14px;
+        }
+
+        &__sender, &__sender p {
+          color: --var(--govuk-heading-color);
+          font-size: 12px;
+          font-weight: bold;
+        }
+
       }
     }
 

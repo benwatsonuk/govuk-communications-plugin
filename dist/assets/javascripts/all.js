@@ -7,9 +7,8 @@
 
   // src/assets/javascripts/modules/notifications.js
   var checkForNotifications = () => {
-    console.log("Looking for notifications...");
     const theNotification = document.querySelector(".govuk-comms-plugin__notification");
-    const theTimeOut = theNotification?.dataset?.govukCommsPluginNotificationTimeout || 3e3;
+    const theTimeOut = theNotification?.dataset?.govukCommsPluginNotificationDelay || 3e3;
     if (theNotification) {
       setTimeout(() => {
         theNotification.classList.add("govuk-comms-plugin__notification--show");
@@ -17,7 +16,6 @@
     }
   };
   var initNotifications = () => {
-    console.log("initNotifications");
     checkForNotifications();
   };
 

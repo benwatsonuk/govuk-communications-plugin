@@ -1,21 +1,49 @@
 {% macro govukCommsPluginNotificationEmail(params) %}
-
-    <div class="govuk-comms-plugin__notification__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8c0-3.31-2.69-6-6-6S6 4.69 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-    </div>
-
-    <!-- <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
-      <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A1.5 1.5 0 016 16.5V7.5a1.5 1.5 0 00-1.5-1.5h-.75A1.5 1.5 0 003 7.5v9a1.5 1.5 0 001.5 1.5h.621zm0 0L8.622 21l-1.5-1.5L12 13.5m0 0L15 17.5l1.378-1.5M12 13.5v-3"></path>
-      </svg>
-    </div> -->
-
-    <div class="flex-1">
-      <div class="flex justify-between items-center">
-          <h2 class="text-sm font-semibold text-black">{{params.heading or "Email alert!"}}</h2>
-          <span class="text-xs text-black/40">Now</span>
+  
+{% if params.style === "apple" %}
+  
+<!-- Single Light Mode Apple Style Notification -->
+  <div class="relative mx-2">
+    <!-- Main Notification Content with Subtle Layer Effect -->
+    <div class="p-4 bg-white/50 rounded-3xl backdrop-blur-lg shadow-md flex items-start space-x-3">
+      <!-- App Icon -->
+      <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
+        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A1.5 1.5 0 016 16.5V7.5a1.5 1.5 0 00-1.5-1.5h-.75A1.5 1.5 0 003 7.5v9a1.5 1.5 0 001.5 1.5h.621zm0 0L8.622 21l-1.5-1.5L12 13.5m0 0L15 17.5l1.378-1.5M12 13.5v-3"></path>
+        </svg>
       </div>
-      <p class="text-gray-600 text-sm">{{params.message or "This is an alert"}}</p>
+      <!-- Notification Content -->
+      <div class="flex-1">
+        <div class="flex justify-between items-center">
+          <h2 class="text-sm font-semibold text-black">{{params.heading or "Email recieved"}}</h2>
+          <span class="text-xs text-black/40">Now</span>
+        </div>
+        <p class="text-gray-600 text-sm">{{params.message or "This is an alert"}}</p>
+      </div>
+    </div>
+  </div>
+
+    {% else %}
+
+    <!-- Single GOV.UK Style Notification -->
+    <div class="govuk-comms-plugin__notification__container">
+      <div class="govuk-comms-plugin__notification__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 88.86"><title>email</title><path d="M7.05,0H115.83a7.07,7.07,0,0,1,7,7.05V81.81a7,7,0,0,1-1.22,4,2.78,2.78,0,0,1-.66,1,2.62,2.62,0,0,1-.66.46,7,7,0,0,1-4.51,1.65H7.05a7.07,7.07,0,0,1-7-7V7.05A7.07,7.07,0,0,1,7.05,0Zm-.3,78.84L43.53,40.62,6.75,9.54v69.3ZM49.07,45.39,9.77,83.45h103L75.22,45.39l-11,9.21h0a2.7,2.7,0,0,1-3.45,0L49.07,45.39Zm31.6-4.84,35.46,38.6V9.2L80.67,40.55ZM10.21,5.41,62.39,47.7,112.27,5.41Z"/></svg>
+      </div>
+      <div class="govuk-comms-plugin__notification__content">
+        <div class="govuk-comms-plugin__notification__header">
+              <h2 class="text-sm font-semibold text-black">{{params.heading or "Email alert!"}}</h2>
+              <span class="text-xs text-black/40">Now</span>
+        </div>
+        <div class="govuk-comms-plugin__notification__body">
+            <p class="text-gray-600 text-sm">{{params.message or "This is an alert"}}</p>
+        </div>
+        <div class="govuk-comms-plugin__notification__sender">
+            <p class="text-xs">{{params.sender or "Sender Name"}}</p>
+        </div>
+      </div>
     </div>
     
+    {% endif %}
+
 {% endmacro %}

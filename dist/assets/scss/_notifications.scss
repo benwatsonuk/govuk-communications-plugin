@@ -1,16 +1,10 @@
 .govuk-comms-plugin__notification {
     display: none;
-    width: 90%;
-    margin: 0 auto;
     transition: all 0.3s ease-in-out;
     background: var(--govuk-body-background-colour, #fff);
     // transform: translateY(-100%);
 
     // On desktop, transform the notification
-    @include govuk-media-query($from: desktop) {
-        width: 400px;
-        height: 200px;
-    }
 
     &--show {
         display: block;
