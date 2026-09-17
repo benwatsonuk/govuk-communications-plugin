@@ -10,12 +10,5 @@
         display: block;
         position: fixed;
         z-index: 9999;
-        @include govuk-media-query($until: desktop) {
-            top: 1rem;
-        }
-        @include govuk-media-query($from: desktop) {
-            bottom: 1rem;
-            right: 1rem;
-        }
     }
 }
