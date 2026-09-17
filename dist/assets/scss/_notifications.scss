@@ -1,12 +1,10 @@
 .govuk-comms-plugin__notification {
-    // display: none;
     visibility: hidden;
     position: fixed;
-    transition: opacity 1.5s ease-in-out, top 1.5s ease-in-out, bottom 1.5s ease-in-out, right 1.5s ease-in-out, left 1.5s ease-in-out;
+    transition: transform $govukCommsPluginTransitionDuration/2 ease-in-out,opacity $govukCommsPluginTransitionDuration ease-in-out, top $govukCommsPluginTransitionDuration ease-in-out, bottom $govukCommsPluginTransitionDuration ease-in-out, right $govukCommsPluginTransitionDuration ease-in-out, left $govukCommsPluginTransitionDuration ease-in-out;
     background: var(--govuk-body-background-colour, #fff);
 
     &--show {
-        // display: block;
         visibility: visible;
         z-index: 9999;
     }
