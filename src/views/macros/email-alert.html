@@ -1,24 +1,25 @@
 {% macro govukCommsPluginNotificationEmail(params) %}
   
-{% if params.style === "apple" %}
+{% if params.style === "apple" or params.style === "apple--dark" %}
   
 <!-- Single Light Mode Apple Style Notification -->
-  <div class="relative mx-2">
+  <div class="govuk-comms-plugin__notification__style--apple rounded-3xl items-center backdrop-blur-lg shadow-md ">
     <!-- Main Notification Content with Subtle Layer Effect -->
-    <div class="p-4 bg-white/50 rounded-3xl backdrop-blur-lg shadow-md flex items-start space-x-3">
+    <div class="px-3 py-3 items-center flex space-x-1 govuk-comms-plugin__notification__container rounded-3xl ">
       <!-- App Icon -->
-      <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
-        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A1.5 1.5 0 016 16.5V7.5a1.5 1.5 0 00-1.5-1.5h-.75A1.5 1.5 0 003 7.5v9a1.5 1.5 0 001.5 1.5h.621zm0 0L8.622 21l-1.5-1.5L12 13.5m0 0L15 17.5l1.378-1.5M12 13.5v-3"></path>
-        </svg>
+      <div class="govuk-comms-plugin__notification__icon w-12 h-12 flex items-center justify-center mr-3">
+          
       </div>
       <!-- Notification Content -->
       <div class="flex-1">
         <div class="flex justify-between items-center">
-          <h2 class="text-sm font-semibold text-black">{{params.heading or "Email recieved"}}</h2>
-          <span class="text-xs text-black/40">Now</span>
+          <h2 class="text-sm font-semibold my-0">{{params.sender or "Sender Name"}}</h2>
+          <span class="text-xs {% if params.style === 'apple--dark' %}text-white{% else %}text-black/40{% endif %}">Now</span>
         </div>
-        <p class="text-gray-600 text-sm">{{params.message or "This is an alert"}}</p>
+        <div class="text-sm font-semibold">{{params.heading or "Email recieved"}}</div>
+        <div class="govuk-comms-plugin__notification__body">
+          <p class="text-gray-600 text-sm my-0">{{params.message or "This is an alert"}}</p>
+        </div>
       </div>
     </div>
   </div>

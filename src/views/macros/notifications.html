@@ -2,6 +2,7 @@
 {% from "./email-alert.html" import govukCommsPluginNotificationEmail %}
 
 <div data-module="govuk-comms-plugin-notification" 
+    {% if params.href %}data-govuk-comms-plugin-notification-target="{{ params.href }}"{% endif %} 
     data-govuk-comms-plugin-notification-type="{{ params.type or 'email' }}" 
     data-govuk-comms-plugin-notification-style="{{ params.style or 'default' }}" 
     {% if params.transition %}data-govuk-comms-plugin-notification-transition="{{ params.transition or 'default' }}"{% endif %}

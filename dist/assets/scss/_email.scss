@@ -83,12 +83,53 @@
         }
       }
 
-      // &--apple {
-      //   // Some styles are declared in Tailwind.css to keep the HTML/Nunjucks clean
-      // }
-
-      // position: fixed;
-      // bottom: -100%;
+      &--apple {
+        // Some styles are declared in Tailwind.css to keep the HTML/Nunjucks clean
+        background: transparent;
+        border-radius: 2rem;
+        @include govuk-media-query($from: desktop) {
+          top: 1rem;
+          bottom: unset;
+        }
+        &--dark {
+          background: transparent;
+          border-radius: 2rem;
+          @include govuk-media-query($from: desktop) {
+            top: 1rem;
+            bottom: unset;
+          }
+          .govuk-comms-plugin__notification {
+            &__container {
+              background: rgba(0, 0, 0, 0.4);
+              color: #fff;
+            }
+            &__icon {
+              background: url( $govuk-comms-images + "apple-icon.png") no-repeat center center;
+              background-size: cover;
+            }
+            &__body, &__body p {
+              color:  #fff;
+              font-size: 14px;
+              margin-bottom: 0;
+            }
+          }
+        }
+        .govuk-comms-plugin__notification {
+          &__container {
+            background: rgba(255, 255, 255, 0.7);
+          }
+          &__icon {
+            background: url( $govuk-comms-images + "apple-icon.png") no-repeat center center;
+            background-size: cover;
+          }
+          
+          &__body, &__body p {
+            color: --var(--govuk-body-color);
+            font-size: 14px;
+            margin-bottom: 0;
+          }
+        }
+      }
 
       &--windows {
         background: rgb(0, 90, 158);

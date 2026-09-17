@@ -21,10 +21,16 @@ export const notifyUserOfMessage = (type, heading, message, from, target) => {
 const checkForNotifications = () => {
     const theNotification = document.querySelector('.govuk-comms-plugin__notification')
     const theTimeOut = theNotification?.dataset?.govukCommsPluginNotificationDelay || 3000
+    const theTarget = theNotification?.dataset?.govukCommsPluginNotificationTarget || null
     if (theNotification) {
         setTimeout(() => {
             theNotification.classList.add('govuk-comms-plugin__notification--show')
         }, theTimeOut)
+        if (theTarget) {
+            theNotification.addEventListener('click', (e) => {
+                window.location.href = theTarget
+            })
+        }
     }
 }
 

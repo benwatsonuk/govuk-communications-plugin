@@ -2,6 +2,9 @@
   &--move {
     transform: translate3d(0, -100%, 0);
     @include govuk-media-query($from: desktop) {
+      &:not(.govuk-comms-plugin__notification__style--apple, .govuk-comms-plugin__notification__style--apple--dark) {
+        transform: translate3d(0, 100%, 0);
+      }
       transform: translate3d(100%, 0, 0);
     }
     &.govuk-comms-plugin__notification--show {
