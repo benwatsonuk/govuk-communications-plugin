@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.2
+
+### Fixes
+- Asset path actually fixed
+
+## v1.0.1
+
+### Fixes
+- Asset path fixed
+
 ## v1.0.0
 
 ### Notes
