@@ -1,14 +1,13 @@
 .govuk-comms-plugin__notification {
-    display: none;
-    transition: all 0.3s ease-in-out;
+    // display: none;
+    visibility: hidden;
+    position: fixed;
+    transition: opacity 1.5s ease-in-out, top 1.5s ease-in-out, bottom 1.5s ease-in-out, right 1.5s ease-in-out, left 1.5s ease-in-out;
     background: var(--govuk-body-background-colour, #fff);
-    // transform: translateY(-100%);
-
-    // On desktop, transform the notification
 
     &--show {
-        display: block;
-        position: fixed;
+        // display: block;
+        visibility: visible;
         z-index: 9999;
     }
 }

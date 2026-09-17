@@ -4,9 +4,10 @@
 <div data-module="govuk-comms-plugin-notification" 
     data-govuk-comms-plugin-notification-type="{{ params.type or 'email' }}" 
     data-govuk-comms-plugin-notification-style="{{ params.style or 'default' }}" 
+    {% if params.transition %}data-govuk-comms-plugin-notification-transition="{{ params.transition or 'default' }}"{% endif %}
     {% if params.delay %}data-govuk-comms-plugin-notification-delay="{{ params.delay }}"{% endif %} 
     data-govuk-comms-plugin-notification-delay="{{ params.delay }}" 
-    class="govuk-comms-plugin__notification {% if params.type %}govuk-comms-plugin__notification__{{ params.type }}{% endif %} govuk-comms-plugin__notification--{{ params.style or 'default'}}"
+    class="govuk-comms-plugin__notification {% if params.type %}govuk-comms-plugin__notification__{{ params.type }}{% endif %} govuk-comms-plugin__notification__style--{{ params.style or 'default'}} govuk-comms-plugin__notification__transition--{{ params.transition or 'default'}}"
     href="{{ params.href }}">
     {% if params.type === "sms" or params.type === "authApp" %}
         {{ govukCommsPluginNotificationMobile(params) }}

@@ -1,8 +1,17 @@
-.govuk-comms-plugin {
+.govuk-comms-plugin__notification__transition {
   &--translate {
     &-from-bottom {
       bottom: 1rem;
       right: 1rem;
+    }
+  }
+
+  &--fade, &--default {
+    opacity: 0;
+
+    &.govuk-comms-plugin__notification--show {
+      transition: opacity 1.5s ease-in-out;
+      opacity: 1;
     }
   }
 }
